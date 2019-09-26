@@ -1,5 +1,11 @@
 /*
-Guía de aplicación de: Subconsultas, Joins y Vistas con Oracle 11g 
+UNIVERSIDAD CATOLICA DE EL SALVADOR
+FACULTAD DE CIENCIAS EMPRESARIALES
+LICENCIATURA EN SISTEMAS INFORMÁTICOS ADMINISTRATIVOS
+GESTIÓN DE BASE DE DATOS II – CICLO II 2019
+CATEDRÁTICO: LICDO. EDGAR AVILÉS
+
+Guía de aplicación de: Subconsultas, Joins y Vistas con Oracle 11g (SOLUCION)
 
 Objetivo: Desarrollar la capacidad de análisis para la aplicación de: Subconsultas, joins y vistas complejas;
 en Oracle 11g

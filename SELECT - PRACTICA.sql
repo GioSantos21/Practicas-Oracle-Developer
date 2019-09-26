@@ -1,3 +1,12 @@
+/*
+UNIVERSIDAD CATOLICA DE EL SALVADOR
+FACULTAD DE CIENCIAS EMPRESARIALES
+LICENCIATURA EN SISTEMAS INFORMÁTICOS ADMINISTRATIVOS
+GESTIÓN DE BASE DE DATOS II – CICLO II 2019
+CATEDRÁTICO: LICDO. EDGAR AVILÉS
+Guía de Selección de Registros con Oracle 11g (Solución) 
+*/
+
 -- 1. El controlador de vuelo necesita ver, toda la información concerniente a las aerolíneas.
 SELECT * FROM t_aerolinea;
 

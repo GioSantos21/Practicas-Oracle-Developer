@@ -1,3 +1,18 @@
+/*
+UNIVERSIDAD CATOLICA DE EL SALVADOR
+FACULTAD DE CIENCIAS EMPRESARIALES
+LICENCIATURA EN SISTEMAS INFORMÁTICOS ADMINISTRATIVOS
+GESTIÓN DE BASE DE DATOS II – CICLO II 2019
+CATEDRÁTICO: LICDO. EDGAR AVILÉS
+
+Guía uso de Joins con Oracle 11g (Solución)
+
+Objetivo: Desarrollar la capacidad de análisis para la aplicación de instrucciones JOIN`s en tablas de
+Oracle 11g
+
+Notas relevante: Formatee el resultado de todas las consultas a nivel de encabezado
+*/
+
 /*1. Mostrar el nombre de la aerolínea y el país de origen de la misma; ordene los registros por
 el país en forma ascendente.*/
 SELECT nombaereo AS "Nombre Aereolinea", nompa AS "Pais Origen" FROM t_aerolinea
