@@ -93,7 +93,7 @@ WHERE costodetvucg <> ALL (SELECT costodetvucg FROM t_detvucg WHERE costodetvucg
 /* 15. Se demanda crear un informe completo de vuelos y pasajeros. Los datos a solicitar son: Nombre de
 la Aerolínea, código de vuelo; aeropuerto de destino, ciudad de destino, matrícula y modelo de
 avión que ejecuto el vuelo; y el pasaporte, nombre y apellido del pasajero. */
-SELECT nombaereo, codaero, aeroputvuecom, ciuddesvuecom, matriavion, modavion, t_pasajero_pasapjero, nomjero, apejero FROM T_AEROLINEA
+SELECT nombaereo, codvuecom, aeroputvuecom, ciuddesvuecom, matriavion, modavion, pasapjero, nomjero, apejero FROM T_AEROLINEA
 INNER JOIN T_VUECOM ON T_AEROLINEA.CODAERO = T_VUECOM.T_AEROLINEA_CODAERO
 INNER JOIN t_avion ON T_VUECOM.T_AVION_CODAVION = t_avion.CODAVION
 INNER JOIN T_DETVUCOM ON T_VUECOM.CODVUECOM = T_DETVUCOM.T_VUECOM_CODVUECOM
@@ -104,35 +104,105 @@ la Aerolínea, código de vuelo; aeropuerto de Destino, Ciudad de Destino, matrícu
 avión que ejecuto el vuelo; y el pasaporte, nombre y apellido del pasajero. Donde la Ciudad de
 destino sea 'México DF', se deben ordenar la información por el apellido del pasajero en orden
 ascendente y descendente. */
+SELECT nombaereo, codvuecom, aeroputvuecom, ciuddesvuecom, matriavion, modavion, pasapjero, nomjero, apejero FROM t_aerolinea
+INNER JOIN t_vuecom ON t_aerolinea.codaero = t_vuecom.t_aerolinea_codaero
+INNER JOIN t_avion ON t_vuecom.t_avion_codavion = t_avion.codavion
+INNER JOIN t_detvucom ON t_vuecom.codvuecom = t_detvucom.t_vuecom_codvuecom
+INNER JOIN t_pasajero ON t_detvucom.t_pasajero_pasapjero = t_pasajero.pasapjero
+WHERE ciuddesvuecom = 'M¿xico DF'
+ORDER BY apejero ASC;
 
+SELECT nombaereo, codvuecom, aeroputvuecom, ciuddesvuecom, matriavion, modavion, pasapjero, nomjero, apejero FROM t_aerolinea
+INNER JOIN t_vuecom ON t_aerolinea.codaero = t_vuecom.t_aerolinea_codaero
+INNER JOIN t_avion ON t_vuecom.t_avion_codavion = t_avion.codavion
+INNER JOIN t_detvucom ON t_vuecom.codvuecom = t_detvucom.t_vuecom_codvuecom
+INNER JOIN t_pasajero ON t_detvucom.t_pasajero_pasapjero = t_pasajero.pasapjero
+WHERE ciuddesvuecom = 'M¿xico DF'
+ORDER BY apejero DESC;
 
 /* 17. Se demanda crear un informe completo de vuelos y pasajeros. Los datos a solicitar son: Nombre de
 la Aerolínea, código de vuelo; Aeropuerto de Destino, Ciudad de Destino, matrícula y modelo de
 avión que ejecuto el vuelo; y el pasaporte, nombre y apellido del pasajero. Donde la Ciudad de
 destino sea 'Ciudad de Guatemala', se deben ordenar la información por el apellido del pasajero en
 orden ascendente y descendente. */
+SELECT nombaereo, codvuecom, aeroputvuecom, ciuddesvuecom, matriavion, modavion, pasapjero, nomjero, apejero FROM t_aerolinea
+INNER JOIN t_vuecom ON t_aerolinea.codaero = t_vuecom.t_aerolinea_codaero
+INNER JOIN t_avion ON t_vuecom.t_avion_codavion = t_avion.codavion
+INNER JOIN t_detvucom ON t_vuecom.codvuecom = t_detvucom.t_vuecom_codvuecom
+INNER JOIN t_pasajero ON t_detvucom.t_pasajero_pasapjero = t_pasajero.pasapjero
+WHERE ciuddesvuecom = 'Ciudad de Guatemala'
+ORDER BY apejero ASC;
 
+SELECT nombaereo, codvuecom, aeroputvuecom, ciuddesvuecom, matriavion, modavion, pasapjero, nomjero, apejero FROM t_aerolinea
+INNER JOIN t_vuecom ON t_aerolinea.codaero = t_vuecom.t_aerolinea_codaero
+INNER JOIN t_avion ON t_vuecom.t_avion_codavion = t_avion.codavion
+INNER JOIN t_detvucom ON t_vuecom.codvuecom = t_detvucom.t_vuecom_codvuecom
+INNER JOIN t_pasajero ON t_detvucom.t_pasajero_pasapjero = t_pasajero.pasapjero
+WHERE ciuddesvuecom = 'Ciudad de Guatemala'
+ORDER BY apejero DESC;
 
 /* 18. Se demanda crear un informe completo de vuelos y pasajeros. Los datos a solicitar son: Nombre de
 la Aerolínea, código de vuelo; Aeropuerto de Destino, Ciudad de Destino, matrícula y modelo de
 avión que ejecuto el vuelo; y el pasaporte, nombre y apellido del pasajero. Donde la Ciudad de
 destino sea ‘Panamá', se deben ordenar la información por el apellido del pasajero en orden
 ascendente y descendente. */
+SELECT nombaereo, codvuecom, aeroputvuecom, ciuddesvuecom, matriavion, modavion, pasapjero, nomjero, apejero FROM t_aerolinea
+INNER JOIN t_vuecom ON t_aerolinea.codaero = t_vuecom.t_aerolinea_codaero
+INNER JOIN t_avion ON t_vuecom.t_avion_codavion = t_avion.codavion
+INNER JOIN t_detvucom ON t_vuecom.codvuecom = t_detvucom.t_vuecom_codvuecom
+INNER JOIN t_pasajero ON t_detvucom.t_pasajero_pasapjero = t_pasajero.pasapjero
+WHERE ciuddesvuecom = 'Panam¿'
+ORDER BY apejero ASC;
 
+SELECT nombaereo, codvuecom, aeroputvuecom, ciuddesvuecom, matriavion, modavion, pasapjero, nomjero, apejero FROM t_aerolinea
+INNER JOIN t_vuecom ON t_aerolinea.codaero = t_vuecom.t_aerolinea_codaero
+INNER JOIN t_avion ON t_vuecom.t_avion_codavion = t_avion.codavion
+INNER JOIN t_detvucom ON t_vuecom.codvuecom = t_detvucom.t_vuecom_codvuecom
+INNER JOIN t_pasajero ON t_detvucom.t_pasajero_pasapjero = t_pasajero.pasapjero
+WHERE ciuddesvuecom = 'Panam¿'
+ORDER BY apejero DESC;
 
 /* 19. Se pide un reporte que contenga los siguientes datos: Nombre de la Aerolínea, código de vuelo;
 aeropuerto de destino, ciudad de destino, matrícula y modelo de avión que ejecuto el vuelo; y los
 datos de carga: código, nombre de la carga; y su respectivo costo de transporte. Donde el costo de
 transporte la carga sea mayor que el promedio, se deben ordenar la información por el nombre de la
 carga en forma ascendente y descendente. */
+SELECT nombaereo, codvuecg, aeroputvuecg, ciuddesvuecg, matriavion, modavion, codcarga, nomcarga, costodetvucg  FROM t_aerolinea
+INNER JOIN t_vuecg ON t_aerolinea.codaero = t_vuecg.t_aerolinea_codaero
+INNER JOIN t_avion ON t_vuecg.t_avion_codavion = t_avion.codavion
+INNER JOIN t_detvucg ON t_vuecg.codvuecg = t_detvucg.t_vuecg_codvuecg
+INNER JOIN t_carga ON t_detvucg.t_carga_codcarga = t_carga.codcarga
+WHERE costodetvucg > (SELECT AVG(costodetvucg) FROM t_detvucg)
+ORDER BY nomcarga ASC;
 
+SELECT nombaereo, codvuecg, aeroputvuecg, ciuddesvuecg, matriavion, modavion, costodetvucg, t_carga_codcarga, nomcarga  FROM t_aerolinea
+INNER JOIN t_vuecg ON t_aerolinea.codaero = t_vuecg.t_aerolinea_codaero
+INNER JOIN t_avion ON t_vuecg.t_avion_codavion = t_avion.codavion
+INNER JOIN t_detvucg ON t_vuecg.codvuecg = t_detvucg.t_vuecg_codvuecg
+INNER JOIN t_carga ON t_detvucg.t_carga_codcarga = t_carga.codcarga
+WHERE costodetvucg > (SELECT AVG(costodetvucg) FROM t_detvucg)
+ORDER BY nomcarga DESC;
 
 /* 20. Se pide un reporte que contenga los siguientes datos: Nombre de la Aerolínea, código de vuelo,
 Aeropuerto de Destino, Ciudad de Destino, matrícula y modelo de avión que ejecuto el vuelo; y los
 datos de carga: código, nombre de la carga; y su respectivo costo de transporte. Donde el costo de
 transporte de la carga sea menor que el promedio, se deben ordenar la información por el nombre
 de la carga en forma ascendente y descendente. */
+SELECT nombaereo, codvuecg, aeroputvuecg, ciuddesvuecg, matriavion, modavion, codcarga, nomcarga, costodetvucg  FROM t_aerolinea
+INNER JOIN t_vuecg ON t_aerolinea.codaero = t_vuecg.t_aerolinea_codaero
+INNER JOIN t_avion ON t_vuecg.t_avion_codavion = t_avion.codavion
+INNER JOIN t_detvucg ON t_vuecg.codvuecg = t_detvucg.t_vuecg_codvuecg
+INNER JOIN t_carga ON t_detvucg.t_carga_codcarga = t_carga.codcarga
+WHERE costodetvucg < (SELECT AVG(costodetvucg) FROM t_detvucg)
+ORDER BY nomcarga ASC;
 
+SELECT nombaereo, codvuecg, aeroputvuecg, ciuddesvuecg, matriavion, modavion, codcarga, nomcarga, costodetvucg  FROM t_aerolinea
+INNER JOIN t_vuecg ON t_aerolinea.codaero = t_vuecg.t_aerolinea_codaero
+INNER JOIN t_avion ON t_vuecg.t_avion_codavion = t_avion.codavion
+INNER JOIN t_detvucg ON t_vuecg.codvuecg = t_detvucg.t_vuecg_codvuecg
+INNER JOIN t_carga ON t_detvucg.t_carga_codcarga = t_carga.codcarga
+WHERE costodetvucg < (SELECT AVG(costodetvucg) FROM t_detvucg)
+ORDER BY nomcarga DESC;
 
 /* 21. Se pide un reporte que contenga los siguientes datos: Nombre de la Aerolínea, código de vuelo;
 Aeropuerto de Destino, Ciudad de Destino, matrícula y modelo de avión que ejecuto el vuelo; y los
@@ -140,7 +210,21 @@ datos de carga: código, nombre de la carga; y su respectivo costo de transporte.
 transporte de la carga sea menor que el costo máximo de transporte de carga; y donde el costo de
 la carga sea mayor que el costo mínimo de transporte. Se deben ordenar la información por el
 nombre de la carga en forma ascendente. */
+SELECT nombaereo, codvuecg, aeroputvuecg, ciuddesvuecg, matriavion, modavion, codcarga, nomcarga, costodetvucg  FROM t_aerolinea
+INNER JOIN t_vuecg ON t_aerolinea.codaero = t_vuecg.t_aerolinea_codaero
+INNER JOIN t_avion ON t_vuecg.t_avion_codavion = t_avion.codavion
+INNER JOIN t_detvucg ON t_vuecg.codvuecg = t_detvucg.t_vuecg_codvuecg
+INNER JOIN t_carga ON t_detvucg.t_carga_codcarga = t_carga.codcarga
+WHERE costodetvucg > (SELECT MIN(costodetvucg) FROM t_detvucg)
+ORDER BY nomcarga ASC;
 
+SELECT nombaereo, codvuecg, aeroputvuecg, ciuddesvuecg, matriavion, modavion, codcarga, nomcarga, costodetvucg  FROM t_aerolinea
+INNER JOIN t_vuecg ON t_aerolinea.codaero = t_vuecg.t_aerolinea_codaero
+INNER JOIN t_avion ON t_vuecg.t_avion_codavion = t_avion.codavion
+INNER JOIN t_detvucg ON t_vuecg.codvuecg = t_detvucg.t_vuecg_codvuecg
+INNER JOIN t_carga ON t_detvucg.t_carga_codcarga = t_carga.codcarga
+WHERE costodetvucg > (SELECT MIN(costodetvucg) FROM t_detvucg)
+ORDER BY nomcarga DESC;
 
 /* 22. Se pide un reporte que contenga los siguientes datos: Nombre de la Aerolínea, código de vuelo;
 Aeropuerto de Destino, Ciudad de Destino, matrícula y modelo de avión que ejecuto el vuelo; y los
@@ -149,5 +233,38 @@ costo de la carga sea menor que el costo máximo de transporte de carga; y donde 
 costo de la carga sea mayor que el costo mínimo de transporte. Se deben ordenar la información
 por el nombre de la carga en forma ascendente. */
 
+-- A
 
+SELECT nombaereo, codvuecg, aeroputvuecg, ciuddesvuecg, matriavion, modavion, codcarga, nomcarga, costodetvucg  FROM t_aerolinea
+INNER JOIN t_vuecg ON t_aerolinea.codaero = t_vuecg.t_aerolinea_codaero
+INNER JOIN t_avion ON t_vuecg.t_avion_codavion = t_avion.codavion
+INNER JOIN t_detvucg ON t_vuecg.codvuecg = t_detvucg.t_vuecg_codvuecg
+INNER JOIN t_carga ON t_detvucg.t_carga_codcarga = t_carga.codcarga
+WHERE pcdetvucg < (SELECT MAX(costodetvucg) FROM t_detvucg)
+ORDER BY nomcarga ASC;
 
+SELECT nombaereo, codvuecg, aeroputvuecg, ciuddesvuecg, matriavion, modavion, codcarga, nomcarga, costodetvucg  FROM t_aerolinea
+INNER JOIN t_vuecg ON t_aerolinea.codaero = t_vuecg.t_aerolinea_codaero
+INNER JOIN t_avion ON t_vuecg.t_avion_codavion = t_avion.codavion
+INNER JOIN t_detvucg ON t_vuecg.codvuecg = t_detvucg.t_vuecg_codvuecg
+INNER JOIN t_carga ON t_detvucg.t_carga_codcarga = t_carga.codcarga
+WHERE pcdetvucg < (SELECT MAX(costodetvucg) FROM t_detvucg)
+ORDER BY nomcarga DESC;
+
+-- B
+
+SELECT nombaereo, codvuecg, aeroputvuecg, ciuddesvuecg, matriavion, modavion, codcarga, nomcarga, costodetvucg  FROM t_aerolinea
+INNER JOIN t_vuecg ON t_aerolinea.codaero = t_vuecg.t_aerolinea_codaero
+INNER JOIN t_avion ON t_vuecg.t_avion_codavion = t_avion.codavion
+INNER JOIN t_detvucg ON t_vuecg.codvuecg = t_detvucg.t_vuecg_codvuecg
+INNER JOIN t_carga ON t_detvucg.t_carga_codcarga = t_carga.codcarga
+WHERE pcdetvucg > (SELECT MIN(costodetvucg) FROM t_detvucg)
+ORDER BY nomcarga ASC;
+
+SELECT nombaereo, codvuecg, aeroputvuecg, ciuddesvuecg, matriavion, modavion, codcarga, nomcarga, costodetvucg  FROM t_aerolinea
+INNER JOIN t_vuecg ON t_aerolinea.codaero = t_vuecg.t_aerolinea_codaero
+INNER JOIN t_avion ON t_vuecg.t_avion_codavion = t_avion.codavion
+INNER JOIN t_detvucg ON t_vuecg.codvuecg = t_detvucg.t_vuecg_codvuecg
+INNER JOIN t_carga ON t_detvucg.t_carga_codcarga = t_carga.codcarga
+WHERE pcdetvucg > (SELECT MIN(costodetvucg) FROM t_detvucg)
+ORDER BY nomcarga DESC;
