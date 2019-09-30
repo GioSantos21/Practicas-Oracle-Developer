@@ -18,6 +18,7 @@ T_AEROLINEA. Colocar el nombre del trigger de la siguiente manera: TRI_AU_AUDIT_
 */
 
 -- CREACIÓN DE TABLA AUDITORIA_AEROLINEA_U 
+
 CREATE TABLE AUDITORIA_AEROLINEA_U (
 codigo_aerolinea CHAR(3) NOT NULL,
 nombre_aerolinea VARCHAR2(50) NOT NULL,
@@ -32,6 +33,7 @@ ip	VARCHAR2(20) NOT NULL,
 fecha_actualizacion_registro TIMESTAMP(6) NOT NULL);
     
 -- TRITGER 1 = TRI_AU_AUDIT_AEROLINEA
+
 create or replace TRIGGER TRI_AU_AUDIT_AEROLINEA
 AFTER UPDATE ON t_aerolinea
     FOR EACH ROW
@@ -55,6 +57,7 @@ tabla T_VUECOM. Colocar el nombre del trigger de la siguiente manera: TRI_AD_AUD
 */
 
 -- CREACIÓN DE TABLA AUDITORIA_VUELOCOMERCIAL_D
+
 CREATE TABLE AUDITORIA_VUELOCOMERCIAL_D (
     codvucomercial NUMBER(5) NOT NULL,
     f_desp TIMESTAMP(6) NOT NULL,
@@ -69,6 +72,7 @@ CREATE TABLE AUDITORIA_VUELOCOMERCIAL_D (
     fecha_eliminacion_registro TIMESTAMP(6) NOT NULL);
 
 -- TRIGGER 2 = TRI_AD_AUDIT_VUECO
+
 create or replace TRIGGER TRI_AD_AUDIT_VUECO
     AFTER DELETE ON t_vuecom
     FOR EACH ROW
@@ -95,6 +99,7 @@ TRI_DU_AUDITORIA_PASAJERO
 */
 
 -- CREACIÓN DE TABLA AUDITORIA_PASAJERO
+
 CREATE TABLE AUDITORIA_PASAJERO (
 pasaporte_pasajero CHAR(20) NOT NULL,
 nombre_pasajero VARCHAR2(30) NOT NULL,
@@ -109,11 +114,13 @@ ip VARCHAR2(20) NOT NULL,
 fecha_evento TIMESTAMP(6) NOT NULL);
 
 -- VISTA = V_PASAJERO
+
 CREATE VIEW V_PASAJERO
 AS SELECT pasapjero, nomjero, apejero, fecjero, dirjero, telfijero, telmovjero 
 FROM t_pasajero;
 
 -- TRIGER 3 = TRI_DU_AUDITORIA_PASAJERO
+
 create or replace TRIGGER TRI_DU_AUDITORIA_PASAJERO
     INSTEAD OF DELETE OR UPDATE
     ON V_PASAJERO
@@ -148,6 +155,7 @@ permitirá evaluar la inserción de registros solo en los días de Lunes a Viernes;
 */
 
 -- TRIGER 4 = TRI_BI_CARGA
+
 create or replace TRIGGER TRI_BI_CARGA
     BEFORE INSERT ON t_carga
     FOR EACH ROW
@@ -161,7 +169,9 @@ BEGIN
 END;
 
 -- PRUEBA TRIGGER 4
+
 INSERT INTO t_carga (codcarga, nomcarga) VALUES ('705','Almohadas');
+
 -- EJERCICIO CON EXITO
 
 /*
@@ -171,6 +181,7 @@ de la tabla de auditoria y el trigger.
 */
 
 -- CREACIÓN DE TABLA AUDITORIA_FABRICAN
+
 CREATE TABLE AUDITORIA_FABRICAN(
 codigo_fabrican CHAR(3) NOT NULL,
 nombre_fabrican VARCHAR2(30) NOT NULL,
@@ -185,6 +196,7 @@ ip VARCHAR2(20) NOT NULL,
 fecha_actualizacion_registro TIMESTAMP(6) NOT NULL);
 
 -- TRIGGER 5 = TRI_AU_AUDIT_FABRICAN
+
 create or replace TRIGGER TRI_AU_AUDIT_FABRICAN
     AFTER UPDATE ON t_fabrican
     FOR EACH ROW
@@ -206,6 +218,7 @@ AM – 17:59 PM). Respete el uso de nomenclatura en la definición del nombre del t
 */
 
 -- TRIGGER 6 = TRI_BI_FABRICAN
+
 create or replace TRIGGER TRI_BI_FABRICAN
     BEFORE INSERT ON t_fabrican
     FOR EACH ROW
@@ -219,8 +232,10 @@ BEGIN
 END;
 
 -- PRUEBA
+
 INSERT INTO t_fabrican (cofabri, nomfabri, dirfabri, tel1fabri, tel2fabri, emailfabri, websitefabri, t_pais_codpa)
 VALUES ('120','Geovanny_Santos','Concepción de Ataco', '7050-8090','70805040','geovanisantos@gmail.com','https://www.geoservices.com','A15');
+
 -- PRUEBA CON EXITO
 
 /*
@@ -231,6 +246,7 @@ trigger.
 */
 
 -- CREACIÓN DE TABLA  AUDITORIA_DETVUELOCARGA
+
 CREATE TABLE AUDITORIA_DETVUELOCARGA (
 codigo_detvuelocarga NUMBER(6,0) NOT NULL,
 precio_detvuelocarga NUMBER(5,0) NOT NULL,
@@ -243,6 +259,7 @@ ip VARCHAR2(20) NOT NULL,
 fecha_eliminacion_registro TIMESTAMP(6) NOT NULL);
 
 -- TRIGER 7 = TRI_AD_AUDIT_DETVUCG
+
 create or replace TRIGGER TRI_AD_AUDIT_DETVUCG
     AFTER DELETE ON t_detvucg
     FOR EACH ROW
@@ -264,6 +281,7 @@ nomenclatura en la definición del nombre de la tabla de auditoria, la vista y el
 */
 
 -- CREACIÓN DE TABLA AUDITORIA_AVION
+
 CREATE TABLE AUDITORIA_AVION (
 codigo_avion CHAR(4) NOT NULL,
 matricula_avion CHAR(15) NOT NULL,
@@ -278,11 +296,13 @@ ip VARCHAR2(20) NOT NULL,
 fecha_evento TIMESTAMP(6) NOT NULL);
 
 -- VISTA = V_AVION
+
 CREATE VIEW V_AVION
 AS SELECT codavion, matriavion, modavion, cuavion, diskavion, t_fabrican_cofabri, t_tipoavion_codtipoavion
 FROM t_avion;
 
 -- TRIGGER 8 = TRI_DU_AUDITORIA_AVION
+
 create or replace TRIGGER TRI_DU_AUDITORIA_AVION
     INSTEAD OF DELETE OR UPDATE
     ON V_AVION
