@@ -11,3 +11,5 @@ BEGIN
     VALUES (:old.codaero, :old.nombaereo, :old.diraereo, :old.tel1aereo, :old.tel2aereo, 
     :old.emailaereo, :old.websiteaereo, :old.t_pais_codpa, var_usuario, SYS_CONTEXT('USERENV','IP_ADDRESS',15),SYSDATE);
 END;
+
+SELECT * FROM t_aerolinea;
