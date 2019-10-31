@@ -1,5 +1,4 @@
-/*
-UNIVERSIDAD CATOLICA DE EL SALVADOR
+/* UNIVERSIDAD CATOLICA DE EL SALVADOR
 FACULTAD DE CIENCIAS EMPRESARIALES
 LICENCIATURA EN SISTEMAS INFORMÁTICOS ADMINISTRATIVOS
 GESTIÓN DE BASE DE DATOS II – CICLO II 2019
@@ -14,8 +13,7 @@ medida de seguridad en un entorno de Base de Datos.
 se le presenta en el segundo apartado de este ítem. Seguidamente al crear la tabla, desarrollar un
 Trigger de “actualización después”; que permita copiar los datos antiguos de la tabla T_AEROLINEA,
 a la tabla AUDITORIA_AEROLINEA_U; después de realizar la actualización de los datos en la tabla
-T_AEROLINEA. Colocar el nombre del trigger de la siguiente manera: TRI_AU_AUDIT_AEROLINEA
-*/
+T_AEROLINEA. Colocar el nombre del trigger de la siguiente manera: TRI_AU_AUDIT_AEROLINEA */
 
 -- CREACIÓN DE TABLA AUDITORIA_AEROLINEA_U 
 
