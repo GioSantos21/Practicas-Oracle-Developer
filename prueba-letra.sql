@@ -1,20 +1,3 @@
-/* CREACIÓN DE TABLA AUDITORIA_AEROLINEA_U  */
-
-CREATE TABLE AUDITORIA_AEROLINEA_U (
-codigo_aerolinea CHAR(3) NOT NULL,
-nombre_aerolinea VARCHAR2(50) NOT NULL,
-direccion_aerolinea VARCHAR2(100) NOT NULL,
-telefono1_aerolinea CHAR(20) NOT NULL,
-telefono2_aerolinea CHAR(20) NOT NULL,
-email_aerolinea VARCHAR2(50) NOT NULL,
-website_aerolinea VARCHAR2(100) NOT NULL,
-codigo_pais CHAR(3) NOT NULL,
-usuario	VARCHAR2(20) NOT NULL,
-ip	VARCHAR2(20) NOT NULL,
-fecha_actualizacion_registro TIMESTAMP(6) NOT NULL);
-    
-/* TRITGER 1 = TRI_AU_AUDIT_AEROLINEA */
-
 create or replace TRIGGER TRI_AU_AUDIT_AEROLINEA
 AFTER UPDATE ON t_aerolinea
     FOR EACH ROW
